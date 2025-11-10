@@ -1,4 +1,4 @@
-O projeto “blblablabla” é um jogo web simples desenvolvido em Flask (Python), onde o usuário deve escolher entre duas imagens — uma real e outra gerada por inteligência artificial (IA).
+O projeto Real ou IA é um jogo web simples desenvolvido em Flask (Python), onde o usuário deve escolher entre duas imagens — uma real e outra gerada por inteligência artificial (IA).
 
 O objetivo é testar a percepção visual do jogador e mostrar, ao final, se ele conseguiu identificar corretamente as imagens criadas por IA.
 
