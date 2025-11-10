@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #0d6efd;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 220px;
+  height: calc(100vh - 120px);
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: #333;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.sidebar a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Main content */
+main {
+  margin-left: 230px;
+  margin-top: 90px;
+  margin-bottom: 70px;
+  padding: 20px;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0d6efd;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9em;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+/* Buttons & images */
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #0d6efd;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background-color: #0b5ed7;
+}
+img {
+  border-radius: 10px;
+  margin: 10px;
+}

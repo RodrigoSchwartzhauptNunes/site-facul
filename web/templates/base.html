@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}PolitiIA{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    🧠 PolitiIA — O Desafio da Inteligência Artificial
+  </header>
+
+  <div class="sidebar">
+    <a href="{{ url_for('index') }}">🏠 Início</a>
+    <a href="{{ url_for('sobre') }}">ℹ️ Sobre</a>
+    <a href="{{ url_for('politica') }}">🧾 Política de Privacidade</a>
+    <a href="{{ url_for('game1') }}">🎮 Jogo</a>
+  </div>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    © 2025 PolitiIA — Projeto Educacional sobre IA e Realidade
+  </footer>
+</body>
+</html>
+

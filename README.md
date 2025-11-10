@@ -9,17 +9,21 @@ Topologia da INFRA
 
 site-facul/
 │
-├── docker-compose.yml        → define o container Flask
-│
+├── docker-compose.yml
 └── web/
-    ├── Dockerfile             → cria a imagem do app
-    ├── app.py                 → backend Flask (controla as rotas)
+    ├── Dockerfile
+    ├── app.py
     │
-    ├── templates/             → páginas HTML do site
-    │   ├── index.html         → tela inicial com as imagens
-    │   └── game.html          → lógica do jogo "Qual delas é IA?"
+    ├── templates/
+    │   ├── index.html              → Página inicial (HOME)
+    │   ├── sobre.html              → Página “Sobre”
+    │   ├── politica.html           → Página “Política de Privacidade”
+    │   ├── game1.html              → Primeira rodada do jogo
+    │   ├── game2.html              → Segunda rodada do jogo
+    │   └── final.html              → Tela final com pontuação
     │
     └── static/
-        └── img/               → imagens usadas nas páginas
+        └── img/
             ├── real1.jpg
-            └── ai1.jpg
+            ├── ai1.jpg
+            └── ...

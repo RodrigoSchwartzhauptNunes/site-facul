@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Fase 2 - PolitiIA{% endblock %}
+{% block content %}
+  <h2>Essa imagem é real ou feita por IA?</h2>
+  <div>
+    {% for label, img in options %}
+      <button onclick="alert('Você escolheu: {{ label }}')">
+        <img src="{{ url_for('static', filename='img/' + img) }}" width="200">
+      </button>
+    {% endfor %}
+  </div>
+  <br>
+  <a href="{{ url_for('final') }}"><button>Ver Resultado</button></a>
+{% endblock %}
