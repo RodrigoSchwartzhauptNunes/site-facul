@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% block title %}Resultado Final{% endblock %}
+{% block title %}Resultado - PoliticIA{% endblock %}
 {% block content %}
   <h2>Parabéns 🎯</h2>
-  <p>Você completou todas as {{ total }} fases!</p>
+  <p>Você completou todas as 10 fases!</p>
   <p>Sua pontuação final: <strong>{{ score }}/{{ total }}</strong></p>
 
   {% if score == total %}
@@ -10,7 +10,7 @@
   {% elif score >= 7 %}
     <p>Ótimo desempenho! 👏</p>
   {% else %}
-    <p>Continue praticando, o olhar crítico vem com o tempo 👀</p>
+    <p>Continue praticando — o olhar crítico vem com o tempo 👀</p>
   {% endif %}
 
   <a href="{{ url_for('index') }}"><button>Jogar Novamente</button></a>

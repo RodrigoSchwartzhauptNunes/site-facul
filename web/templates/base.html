@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>{% block title %}{% endblock %}</title>
+  <title>{% block title %}PoliticIA{% endblock %}</title>
   <style>
     body {
       margin: 0;
@@ -12,7 +12,7 @@
       text-align: center;
     }
     header {
-      background-color: #0d6efd;
+      background-color: #0052cc;
       color: white;
       padding: 15px;
       font-size: 1.5em;
@@ -20,37 +20,57 @@
       position: fixed;
       width: 100%;
       top: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 10;
     }
     main {
       margin-top: 90px;
       padding: 20px;
+      min-height: 70vh;
     }
     footer {
-      background-color: #0d6efd;
+      background-color: #0052cc;
       color: white;
-      padding: 10px;
+      padding: 12px;
       position: fixed;
       bottom: 0;
       width: 100%;
+      font-size: 0.9em;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+      margin: 0 10px;
+    }
+    footer a:hover {
+      text-decoration: none;
     }
     button {
       padding: 10px 20px;
       font-size: 1em;
       border: none;
-      background-color: #0d6efd;
+      background-color: #0052cc;
       color: white;
       border-radius: 5px;
       cursor: pointer;
       transition: background 0.2s;
     }
     button:hover {
-      background-color: #0b5ed7;
+      background-color: #003d99;
     }
   </style>
 </head>
 <body>
-  <header>🧠 PolitiIA — O Desafio da Inteligência Artificial</header>
-  <main>{% block content %}{% endblock %}</main>
-  <footer>© 2025 PolitiIA — Projeto Educacional</footer>
+  <header>🧠 PoliticIA — O Desafio da Inteligência Artificial</header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    © 2025 PoliticIA — Projeto Educacional |
+    <a href="{{ url_for('sobre') }}">Sobre</a> |
+    <a href="{{ url_for('politica') }}">Política de Privacidade</a>
+  </footer>
 </body>
 </html>
