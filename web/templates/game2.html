@@ -2,13 +2,17 @@
 {% block title %}Fase 2 - PolitiIA{% endblock %}
 {% block content %}
   <h2>Essa imagem é real ou feita por IA?</h2>
-  <div>
-    {% for label, img in options %}
-      <button onclick="alert('Você escolheu: {{ label }}')">
-        <img src="{{ url_for('static', filename='img/' + img) }}" width="200">
-      </button>
-    {% endfor %}
+
+  <div style="text-align:center;">
+    <img src="{{ url_for('static', filename='img/' + options[0][1]) }}" 
+         alt="Imagem do jogo" 
+         width="300" 
+         style="border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2); margin-bottom:20px;">
+    <br>
+    <button onclick="alert('Você escolheu: REAL')" style="margin-right:10px;">REAL</button>
+    <button onclick="alert('Você escolheu: IA')">IA</button>
   </div>
-  <br>
+
+  <br><br>
   <a href="{{ url_for('final') }}"><button>Ver Resultado</button></a>
 {% endblock %}

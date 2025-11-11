@@ -1,14 +1,18 @@
 {% extends "base.html" %}
-{% block title %}Jogo - PolitiIA{% endblock %}
+{% block title %}Fase 1 - PolitiIA{% endblock %}
 {% block content %}
-  <h2>Qual dessas imagens é real?</h2>
-  <div>
-    {% for label, img in options %}
-      <button onclick="alert('Você escolheu: {{ label }}')">
-        <img src="{{ url_for('static', filename='img/' + img) }}" width="200">
-      </button>
-    {% endfor %}
+  <h2>Essa imagem é real ou feita por IA?</h2>
+
+  <div style="text-align:center;">
+    <img src="{{ url_for('static', filename='img/' + options[0][1]) }}" 
+         alt="Imagem do jogo" 
+         width="300" 
+         style="border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2); margin-bottom:20px;">
+    <br>
+    <button onclick="alert('Você escolheu: REAL')" style="margin-right:10px;">REAL</button>
+    <button onclick="alert('Você escolheu: IA')">IA</button>
   </div>
-  <br>
+
+  <br><br>
   <a href="{{ url_for('game2') }}"><button>Próxima Fase →</button></a>
 {% endblock %}
