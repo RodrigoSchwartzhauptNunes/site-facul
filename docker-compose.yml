@@ -5,7 +5,7 @@ services:
     build: ./web
     container_name: politicia_web
     ports:
-      - "8080:8080"         # mapeia a porta 8080 do host para o container
+      - "80:80"         # mapeia a porta 8080 do host para o container
     environment:
       - FLASK_ENV=production
     networks:
