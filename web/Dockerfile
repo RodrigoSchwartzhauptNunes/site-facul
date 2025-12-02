@@ -1,11 +1,14 @@
-FROM python:3.12-slim
+FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
+COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia tudo para dentro do container (incluindo /static e /templates)
-COPY . /app
+COPY . /app/
 
-CMD ["python3", "app.py"]
+# Expõe a porta interna que o Gunicorn usará
+EXPOSE 8080
+
+# Comando final
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "app:app"]
