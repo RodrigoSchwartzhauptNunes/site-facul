@@ -1,85 +1,152 @@
+/* -------- REGRAS GERAIS -------- */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   background-color: #f9f9f9;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Header */
+/* -------- HEADER -------- */
 header {
-  background-color: #0d6efd;
+  position: relative;
+  background-color: #fa3563;
   color: white;
-  padding: 15px 30px;
-  font-size: 1.4em;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.3em;
   font-weight: bold;
-  text-align: center;
+  letter-spacing: 0.5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10;
 }
 
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 70px;
-  left: 0;
-  width: 220px;
-  height: calc(100vh - 120px);
-  background-color: #ffffff;
-  border-right: 1px solid #ddd;
-  padding-top: 20px;
-}
-
-.sidebar a {
-  display: block;
-  color: #333;
-  padding: 10px 20px;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.sidebar a:hover {
-  background-color: #f1f1f1;
-}
-
-/* Main content */
-main {
-  margin-left: 230px;
-  margin-top: 90px;
-  margin-bottom: 70px;
-  padding: 20px;
-}
-
-/* Footer */
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #0d6efd;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 0.9em;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-}
-
-/* Buttons & images */
-button {
-  padding: 10px 20px;
-  font-size: 1em;
-  background-color: #0d6efd;
-  border: none;
-  border-radius: 5px;
-  color: white;
+.logo-link {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1em;
+  font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s;
+  color: #fff;
 }
-button:hover {
-  background-color: #0b5ed7;
+
+.logo-link:hover {
+  text-decoration: underline;
 }
-img {
+
+/* -------- MAIN -------- */
+main {
+  flex-grow: 1;
+  padding: 20px;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* -------- FOOTER -------- */
+footer {
+  background-color: #fa3563;
+  color: white;
+  padding: 12px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
+/* -------- BOTÕES GAME -------- */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* Botão REAL */
+.btn {
+  background-color: #fa3563;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.3em;
+  font-weight: bold;
   border-radius: 10px;
-  margin: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background-color: #d62e56;
+  transform: translateY(-2px);
+}
+
+/* Botão IA (azul) */
+.btn-blue {
+  background-color: #007bff !important;
+}
+
+.btn-blue:hover {
+  background-color: #0063cc !important;
+}
+
+/* -------- BOTÃO RETANGULAR (Jogar Agora / Jogar Novamente) -------- */
+.btn-retangular {
+  background-color: #fa3563;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.3em;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: 0.2s;
+  min-width: 250px;
+}
+
+.btn-retangular:hover {
+  background-color: #d62e56;
+  transform: translateY(-2px);
+}
+
+/* -------- IMAGENS -------- */
+img {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+/* -------- RESPONSIVO -------- */
+@media (max-width: 768px) {
+  header {
+    font-size: 1.1em;
+  }
+
+  .logo-link {
+    font-size: 1em;
+  }
+
+  .btn, .btn-blue, .btn-retangular {
+    width: 90%;
+  }
 }

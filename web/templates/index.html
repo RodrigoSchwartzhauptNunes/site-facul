@@ -1,49 +1,16 @@
 {% extends "base.html" %}
-{% block title %}Início - PoliticIA{% endblock %}
+{% block title %}PoliticIA - Jogo{% endblock %}
+
 {% block content %}
 
-  <img src="{{ url_for('static', filename='img/logo.ico') }}" 
-       alt="Logo PoliticIA"
-       style="width:120px; display:block; margin:30px auto 15px auto;">
+<img src="{{ url_for('static', filename='img/logo.ico') }}" alt="Logo PoliticIA" style="width:120px; display:block; margin:30px auto;">
 
-  <h2>Bem-vindo!</h2>
-  <p>Você consegue distinguir entre a imagem real e aquela que foi gerada por Inteligência Artificial?</p>
+<h2>Bem-vindo!</h2>
 
-  <button class="btn-retangular" onclick="window.location.href='{{ url_for('game') }}'">
-    <img src="{{ url_for('static', filename='img/jogar.ico') }}" alt="Jogar" class="icon-btn">
-    Jogar Agora
-  </button>
+<p>Você consegue distinguir entre a imagem real e aquela que foi gerada por Inteligência Artificial?</p>
 
-  <style>
-    .btn-retangular {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      background-color: #fa3563;
-      color: #fff;
-      font-size: 1.1em;
-      font-weight: 600;
-      border: none;
-      border-radius: 8px;
-      padding: 14px 30px;
-      cursor: pointer;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-      transition: all 0.2s ease-in-out;
-      height: 55px;
-      min-width: 210px;
-    }
-
-    .btn-retangular:hover {
-      background-color: #d62e56;
-      transform: translateY(-2px);
-    }
-
-    .icon-btn {
-      width: 26px;
-      height: 26px;
-      flex-shrink: 0;
-    }
-  </style>
+<button class="btn-retangular" onclick="window.location.href='{{ url_for('game') }}'">
+  Jogar Agora
+</button>
 
 {% endblock %}
