@@ -4,14 +4,28 @@ services:
   web:
     build: ./web
     container_name: politicia_web
-    ports:
-      - "80:80"         # mapeia a porta 8080 do host para o container
-    environment:
-      - FLASK_ENV=production
-    networks:
-      - politicia_net
+    expose:
+      - "8080"
     restart: always
 
-networks:
-  politicia_net:
-    driver: bridge
+  nginx:
+    image: nginx:latest
+    container_name: politicia_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - /etc/letsencrypt:/etc/letsencrypt
+    depends_on:
+      - web
+    restart: always
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot_politicia
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    entrypoint: "/bin/sh"
+    restart: always
