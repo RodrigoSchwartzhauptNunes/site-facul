@@ -1,23 +1,50 @@
 {% extends "base.html" %}
 {% block title %}Resultado Final{% endblock %}
 {% block content %}
+  <h2>🎯 Resultado Final</h2>
+  <p>Sua pontuação foi:</p>
+  <h3><strong>{{ score }}/{{ total }}</strong></h3>
 
-<h2>🎯 Resultado Final</h2>
-<p>Sua pontuação foi:</p>
+  {% if score == total %}
+    <p>Excelente! Você é um detector de IA nato 🤖✨</p>
+  {% elif score >= 7 %}
+    <p>Ótimo desempenho! 👏</p>
+  {% else %}
+    <p>Continue praticando, o olhar crítico vem com o tempo 👀</p>
+  {% endif %}
 
-<h3><strong>{{ score }}/{{ total }}</strong></h3>
+  <button class="btn-retangular" onclick="window.location.href='{{ url_for('index') }}'">
+    Jogar Novamente
+  </button>
 
-{% if score == total %}
-  <p>Excelente! Você é um detector de IA nato 🤖✨</p>
-{% elif score >= 7 %}
-  <p>Ótimo desempenho! 👏</p>
-{% else %}
-  <p>Continue praticando, o olhar crítico vem com o tempo 👀</p>
-{% endif %}
+  <style>
+    .btn-retangular {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: #fa3563;
+      color: #fff;
+      font-size: 1.1em;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 30px;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      transition: all 0.2s ease-in-out;
+      height: 55px;
+      min-width: 220px;
+    }
 
-<button class="btn-retangular"
-        onclick="window.location.href='{{ url_for('index') }}'">
-  Jogar Novamente
-</button>
+    .btn-retangular:hover {
+      background-color: #d62e56;
+      transform: translateY(-2px);
+    }
 
+    .icon-btn {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
 {% endblock %}

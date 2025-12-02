@@ -1,16 +1,47 @@
 {% extends "base.html" %}
-{% block title %}PoliticIA - Jogo{% endblock %}
-
+{% block title %}Início - PoliticIA{% endblock %}
 {% block content %}
 
-<img src="{{ url_for('static', filename='img/logo.ico') }}" alt="Logo PoliticIA" style="width:120px; display:block; margin:30px auto;">
+  <img src="{{ url_for('static', filename='img/logo.ico') }}" 
+       alt="Logo PoliticIA"
+       style="width:120px; display:block; margin:30px auto 15px auto;">
 
-<h2>Bem-vindo!</h2>
+  <h2>Bem-vindo!</h2>
+  <p>Você consegue distinguir entre a imagem real e aquela que foi gerada por Inteligência Artificial?</p>
 
-<p>Você consegue distinguir entre a imagem real e aquela que foi gerada por Inteligência Artificial?</p>
+  <button class="btn-retangular" onclick="window.location.href='{{ url_for('game') }}'">
+    Jogar Agora
+  </button>
 
-<button class="btn-retangular" onclick="window.location.href='{{ url_for('game') }}'">
-  Jogar Agora
-</button>
+  <style>
+    .btn-retangular {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fa3563;
+      color: #fff;
+      font-size: 1.1em;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 35px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: all 0.2s ease-in-out;
+      height: 55px;
+      min-width: 210px;
+
+      /* efeito estiloso */
+      letter-spacing: 0.5px;
+      background-image: linear-gradient(145deg, #fa3563, #ff4d78);
+    }
+
+    .btn-retangular:hover {
+      background-color: #d62e56;
+      background-image: linear-gradient(145deg, #d62e56, #ff668a);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.22);
+    }
+  </style>
 
 {% endblock %}

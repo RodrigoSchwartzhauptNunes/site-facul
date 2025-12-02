@@ -5,20 +5,75 @@
 <h2>Fase {{ fase }}/10</h2>
 <p>Essa imagem é real ou feita por IA?</p>
 
-<img src="{{ url_for('static', filename='img/' + imagem) }}" alt="Imagem do jogo">
+<div style="text-align:center;">
+  <img src="{{ url_for('static', filename='img/' + imagem) }}"
+       alt="Imagem do jogo"
+       width="320"
+       style="border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2); margin-bottom:25px;">
 
-<div class="btn-container">
+  <div class="btn-container">
 
-  <button class="btn"
-    onclick="window.location.href='{{ url_for('responder', resposta='real') }}'">
-    REAL
-  </button>
+    <!-- BOTÃO REAL (MESMA COR DO SITE) -->
+    <button class="btn-game btn-real"
+            onclick="window.location.href='{{ url_for('responder', resposta='real') }}'">
+      <strong>REAL</strong>
+    </button>
 
-  <button class="btn btn-blue"
-    onclick="window.location.href='{{ url_for('responder', resposta='ia') }}'">
-    IA
-  </button>
+    <!-- BOTÃO IA (AZUL) -->
+    <button class="btn-game btn-ia"
+            onclick="window.location.href='{{ url_for('responder', resposta='ia') }}'">
+      <strong>IA</strong>
+    </button>
 
+  </div>
 </div>
+
+<style>
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  .btn-game {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fa3563; /* padrão, sobrescrito nas variações abaixo */
+    color: #fff;
+    font-size: 1.05em;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    height: 55px;
+    min-width: 180px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    transition: all 0.2s ease-in-out;
+    font-weight: bold;
+  }
+
+  /* Hover padrão */
+  .btn-game:hover {
+    transform: translateY(-2px);
+  }
+
+  /* BOTÃO REAL — mantém cor original */
+  .btn-real {
+    background-color: #fa3563;
+  }
+  .btn-real:hover {
+    background-color: #d62e56;
+  }
+
+  /* BOTÃO IA — AZUL */
+  .btn-ia {
+    background-color: #296DFF;
+  }
+  .btn-ia:hover {
+    background-color: #1f54cc;
+  }
+</style>
 
 {% endblock %}
